@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/design/colors.dart';
-import 'package:practice_1/widgets/home_app_bar.dart';
+import 'package:practice_1/widgets/app_bar_items.dart';
+import 'package:practice_1/widgets/money_display.dart';
+import 'package:practice_1/widgets/summary_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -21,11 +23,59 @@ class HomePage extends StatelessWidget {
         backgroundColor: PracticeOneColors.brandLightColor,
         title: const AppBarItems(),
       ),
-      body: const Center(
-          child: Text('Welcome 🚀!!!',
-              style: TextStyle(
-                fontSize: 34,
-              ))),
+      body: const Column(
+        children: [TopHomePageBody()],
+      ),
+    );
+  }
+}
+
+class TopHomePageBody extends StatelessWidget {
+  const TopHomePageBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      width: MediaQuery.of(context).size.width,
+      transform: Matrix4.translationValues(0, -13, 0), // allow to move up the widget
+      decoration: const BoxDecoration(
+          color: PracticeOneColors.brandPrimaryColor,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(16),
+            bottomRight: Radius.circular(16),
+          )),
+      height: 389,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Container(
+            margin: const EdgeInsets.only(top: 56),
+            child: Text(
+              'Your Budget',
+              style: Theme.of(context).textTheme.displaySmall,
+            )),
+        MoneyDipslay(
+          amount: 2868000.12,
+          padding: const EdgeInsets.only(top: 8, right: 4),
+          amountStyle: Theme.of(context).textTheme.displayLarge!.copyWith(color: PracticeOneColors.brandLightColor),
+          amountStyleSmall: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: PracticeOneColors.brandLightColor,
+          ),
+        ),
+        SummaryCard(
+          typeSummaryCard: TypeSummaryCard.incomes,
+          amount: 700000,
+          period: 'From January 1 to January 31',
+          action: () => print('incomes'),
+        ),
+        SummaryCard(
+          typeSummaryCard: TypeSummaryCard.spending,
+          amount: 90000,
+          period: 'From January 1 to January 31',
+          action: () => print('spending'),
+        ),
+      ]),
     );
   }
 }

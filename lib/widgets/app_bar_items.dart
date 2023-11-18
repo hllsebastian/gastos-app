@@ -54,6 +54,10 @@ class ContainerIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorList = [
+      Colors.blue.shade800,
+      Colors.blue.shade400,
+    ];
     return Container(
       width: 40,
       height: 40,
@@ -62,6 +66,15 @@ class ContainerIcon extends StatelessWidget {
         color: Colors.black12,
         border: Border.all(color: PracticeOneColors.brandLightColorBorder),
         borderRadius: BorderRadius.circular(8),
+        // TODO: to look how to do this
+        // gradient: const LinearGradient(
+        //   begin: Alignment.topLeft,
+        //   end: Alignment.bottomRight,
+        //   colors: [
+        //     Colors.blue,
+        //     Colors.red,
+        //   ],
+        // ),
       ),
       child: iconButton,
     );
