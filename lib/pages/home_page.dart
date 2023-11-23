@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/design/colors.dart';
 import 'package:practice_1/widgets/app_bar_items.dart';
+import 'package:practice_1/widgets/buttons_row.dart';
+import 'package:practice_1/widgets/categories.dart';
 import 'package:practice_1/widgets/money_display.dart';
+import 'package:practice_1/widgets/recent_transactions.dart';
 import 'package:practice_1/widgets/summary_card.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({
-    super.key,
-  });
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var buttonStyleInactive = ElevatedButton.styleFrom(
+      elevation: 0, backgroundColor: PracticeOneColors.brandLightColor, shadowColor: PracticeOneColors.brandLightColor);
+  var buttonStyleActive = ElevatedButton.styleFrom(
+      backgroundColor: PracticeOneColors.brandSecondaryColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12), // <-- Radius
+      ));
+  Widget currentDetailWidget = const Categories();
+  late ButtonStyle categorieBtnStyle;
+  late ButtonStyle recentTransactionsBtnStyle;
+  @override
+  void initState() {
+    super.initState();
+    categorieBtnStyle = buttonStyleActive;
+    recentTransactionsBtnStyle = buttonStyleInactive;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +46,65 @@ class HomePage extends StatelessWidget {
         backgroundColor: PracticeOneColors.brandLightColor,
         title: const AppBarItems(),
       ),
-      body: const Column(
-        children: [TopHomePageBody()],
+      body: Column(
+        children: [
+          const TopHomePageBody(),
+          MidHomePageBody(
+            categorieBtnStyle: categorieBtnStyle,
+            recentTransactionsBtnStyle: recentTransactionsBtnStyle,
+            categoriesBtnAction: () {
+              setState(() {
+                currentDetailWidget = const Categories();
+                categorieBtnStyle = buttonStyleActive;
+                recentTransactionsBtnStyle = buttonStyleInactive;
+              });
+            },
+            recentBtnAction: () {
+              setState(() {
+                currentDetailWidget = RecentTransactions(
+                  movementDate: DateTime.now(),
+                  amount: 350.9,
+                  movementName: 'Pizza',
+                  transactionType: RecentTransactionsType.incomes,
+                );
+                categorieBtnStyle = buttonStyleInactive;
+                recentTransactionsBtnStyle = buttonStyleActive;
+              });
+            },
+          ),
+          // RecentTransactions(
+          //   movementDate: DateTime.now(),
+          //   amount: 350.9,
+          //   movementName: 'Pizza',
+          //   transactionType: RecentTransactionsType.incomes,
+          // )
+          currentDetailWidget,
+        ],
       ),
+    );
+  }
+}
+
+class MidHomePageBody extends StatelessWidget {
+  const MidHomePageBody({
+    super.key,
+    required this.categorieBtnStyle,
+    required this.recentTransactionsBtnStyle,
+    this.categoriesBtnAction,
+    this.recentBtnAction,
+  });
+  final ButtonStyle categorieBtnStyle;
+  final ButtonStyle recentTransactionsBtnStyle;
+  final void Function()? categoriesBtnAction;
+  final void Function()? recentBtnAction;
+
+  @override
+  Widget build(BuildContext context) {
+    return ButtonsRow(
+      categorieBtnStyle: categorieBtnStyle,
+      recentTransactionsBtnStyle: recentTransactionsBtnStyle,
+      categoriesBtnAction: categoriesBtnAction,
+      recentBtnAction: recentBtnAction,
     );
   }
 }
