@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/config/app_routes.dart';
+import 'package:practice_1/pages/new_page.dart';
 import 'package:practice_1/widgets/product_detail_card.dart';
 
 class Categories extends StatelessWidget {
@@ -17,6 +19,8 @@ class Categories extends StatelessWidget {
             ),
             onPressed: () {
               print('le diste clic a view all');
+              Navigator.of(context).pushNamed(AppRoutes.newpage);
+              // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NewPage()));
             },
           ),
           const ProductDetailCard(

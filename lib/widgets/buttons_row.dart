@@ -30,7 +30,7 @@ class ButtonsRow extends StatelessWidget {
               style: categorieBtnStyle,
               onPressed: categoriesBtnAction,
               child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 child: Text(
                   'Categories',
                   style: TextStyle(color: PracticeOneColors.brandDarkColor, fontSize: 14),
