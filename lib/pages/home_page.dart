@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_1/design/colors.dart';
+import 'package:practice_1/design/practice_one_colors.dart';
 import 'package:practice_1/widgets/app_bar_items.dart';
 import 'package:practice_1/widgets/buttons_row.dart';
 import 'package:practice_1/widgets/categories.dart';
@@ -8,7 +8,8 @@ import 'package:practice_1/widgets/recent_transactions.dart';
 import 'package:practice_1/widgets/summary_card.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.storeName});
+  final String storeName;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         backgroundColor: PracticeOneColors.brandLightColor,
-        title: const AppBarItems(),
+        title: AppBarItems(storeName: widget.storeName),
       ),
       body: Column(
         children: [

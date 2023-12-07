@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_1/design/colors.dart';
+import 'package:practice_1/design/practice_one_colors.dart';
 import 'package:practice_1/widgets/money_display.dart';
 
 enum TypeSummaryCard { incomes, spending }

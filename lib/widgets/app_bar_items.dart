@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:practice_1/design/colors.dart';
+import 'package:practice_1/design/practice_one_colors.dart';
 
 class AppBarItems extends StatelessWidget {
-  const AppBarItems({
-    super.key,
-  });
-
+  const AppBarItems({super.key, required this.storeName});
+  final String storeName;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +22,7 @@ class AppBarItems extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              'Store Name 💙',
+              storeName,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),

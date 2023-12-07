@@ -36,4 +36,5 @@
         "customFolderName": "src",
         "sample": "dist"
     },
+    "dart.flutterHotReloadOnSave": "all",
 }
