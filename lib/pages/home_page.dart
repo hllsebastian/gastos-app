@@ -17,9 +17,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var buttonStyleInactive = ElevatedButton.styleFrom(
-      elevation: 0, backgroundColor: PracticeOneColors.brandLightColor, shadowColor: PracticeOneColors.brandLightColor);
+      elevation: 0, backgroundColor: GastosColors.brandLightColor, shadowColor: GastosColors.brandLightColor);
   var buttonStyleActive = ElevatedButton.styleFrom(
-      backgroundColor: PracticeOneColors.brandSecondaryColor,
+      backgroundColor: GastosColors.brandSecondaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12), // <-- Radius
       ));
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             bottomRight: Radius.circular(16),
           ),
         ),
-        backgroundColor: PracticeOneColors.brandLightColor,
+        backgroundColor: GastosColors.brandLightColor,
         title: AppBarItems(storeName: widget.storeName),
       ),
       body: Column(
@@ -120,7 +120,7 @@ class TopHomePageBody extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       transform: Matrix4.translationValues(0, -13, 0), // allow to move up the widget
       decoration: const BoxDecoration(
-          color: PracticeOneColors.brandPrimaryColor,
+          color: GastosColors.brandPrimaryColor,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(16),
             bottomRight: Radius.circular(16),
@@ -136,11 +136,11 @@ class TopHomePageBody extends StatelessWidget {
         MoneyDipslay(
           amount: 2868000.12,
           padding: const EdgeInsets.only(top: 8, right: 4),
-          amountStyle: Theme.of(context).textTheme.displayLarge!.copyWith(color: PracticeOneColors.brandLightColor),
+          amountStyle: Theme.of(context).textTheme.displayLarge!.copyWith(color: GastosColors.brandLightColor),
           amountStyleSmall: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            color: PracticeOneColors.brandLightColor,
+            color: GastosColors.brandLightColor,
           ),
         ),
         SummaryCard(

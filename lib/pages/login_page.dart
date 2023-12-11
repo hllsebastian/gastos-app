@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/config/app_routes.dart';
 import 'package:practice_1/design/gastos_texts.dart';
+import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 
 class LogInPage extends StatefulWidget {
@@ -12,20 +13,21 @@ class LogInPage extends StatefulWidget {
 
 class _LogInPageState extends State<LogInPage> {
   final _formLoginKey = GlobalKey<FormState>();
-  var checkBoxState = false;
-  var userInputController = TextEditingController();
+  bool checkBoxState = false;
+  TextEditingController userInputController = TextEditingController();
   late String storeName;
   late BoxDecoration userContainerDecoration;
   late BoxDecoration pswContainerDecoration;
   final defaultInputBorder = InputBorder.none;
-  final defaultContainerInputDecoration = const BoxDecoration(
-      color: PracticeOneColors.brandErrorColor, borderRadius: BorderRadius.all(Radius.circular(12)));
+  final defaultContainerInputDecoration =
+      BoxDecoration(color: GastosColors.brandErrorColor, borderRadius: GastosThemes.borderRadius);
   final activeContainerInputDecoration = BoxDecoration(
-      color: PracticeOneColors.brandSecondaryColor,
-      border: Border.all(color: PracticeOneColors.brandPrimaryColor, width: 2),
-      borderRadius: const BorderRadius.all(Radius.circular(12)));
+      color: GastosColors.brandSecondaryColor,
+      border: Border.all(color: GastosColors.brandPrimaryColor, width: 2),
+      borderRadius: GastosThemes.borderRadius);
   final defaultInputLabelTheme =
-      const TextStyle(fontSize: 13, color: PracticeOneColors.brandLigthDarkColor, fontWeight: FontWeight.normal);
+      const TextStyle(fontSize: 13, color: GastosColors.brandLigthDarkColor, fontWeight: FontWeight.normal);
+
   @override
   void initState() {
     super.initState();
@@ -38,13 +40,13 @@ class _LogInPageState extends State<LogInPage> {
     final screenSize = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(16, 100, 16, 50),
+        padding: const EdgeInsets.fromLTRB(16, 90, 16, 50),
         child: Center(
           child: Column(
             children: [
               Text(
                 GastosTexts.welcome,
-                style: Theme.of(context).textTheme.labelLarge,
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
               Container(
                 margin: const EdgeInsets.fromLTRB(16, 21, 16, 59),
@@ -132,8 +134,8 @@ class _LogInPageState extends State<LogInPage> {
                               checkBoxState = !checkBoxState;
                             });
                           },
-                          checkColor: PracticeOneColors.brandLightColor,
-                          activeColor: PracticeOneColors.brandPrimaryColor,
+                          checkColor: GastosColors.brandLightColor,
+                          activeColor: GastosColors.brandPrimaryColor,
                         ),
                         Expanded(child: Text(GastosTexts.rememberme)),
                         TextButton(
@@ -159,11 +161,11 @@ class _LogInPageState extends State<LogInPage> {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: PracticeOneColors.brandPrimaryColor,
-                            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12)))),
+                            backgroundColor: GastosColors.brandPrimaryColor,
+                            shape: RoundedRectangleBorder(borderRadius: GastosThemes.borderRadius)),
                         child: Text(
-                          GastosTexts.orContinue,
-                          style: const TextStyle(color: PracticeOneColors.brandLightColor),
+                          GastosTexts.logIn,
+                          style: const TextStyle(color: GastosColors.brandLightColor),
                         ),
                       ),
                     ),
@@ -171,7 +173,7 @@ class _LogInPageState extends State<LogInPage> {
                       children: [
                         const Expanded(
                             child: Divider(
-                          color: PracticeOneColors.brandLightColorBorder,
+                          color: GastosColors.brandLightColorBorder,
                           thickness: 1.0,
                         )),
                         Padding(
@@ -180,7 +182,7 @@ class _LogInPageState extends State<LogInPage> {
                         ),
                         const Expanded(
                             child: Divider(
-                          color: PracticeOneColors.brandLightColorBorder,
+                          color: GastosColors.brandLightColorBorder,
                           thickness: 1.0,
                         )),
                       ],
@@ -192,23 +194,20 @@ class _LogInPageState extends State<LogInPage> {
                         Container(
                           width: screenSize.width * 0.4,
                           height: screenSize.height * 0.08,
-                          decoration: const BoxDecoration(
-                              color: PracticeOneColors.brandSecondaryColor,
-                              borderRadius: BorderRadius.all(Radius.circular(12))),
+                          decoration: BoxDecoration(
+                              color: GastosColors.brandSecondaryColor, borderRadius: GastosThemes.borderRadius),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              // Image(
-                              //   image: AssetImage('assets/images/google.png'),
-                              //   width: 30,
-                              // ),
+                              const Image(
+                                image: AssetImage('assets/images/google_icon.png'),
+                                width: 30,
+                              ),
                               const SizedBox(width: 12),
                               Text(
                                 GastosTexts.google,
                                 style: const TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.bold,
-                                    color: PracticeOneColors.brandLigthDarkColor),
+                                    fontSize: 13, fontWeight: FontWeight.bold, color: GastosColors.brandLigthDarkColor),
                               )
                             ],
                           ),
@@ -216,23 +215,20 @@ class _LogInPageState extends State<LogInPage> {
                         Container(
                           width: screenSize.width * 0.4,
                           height: screenSize.height * 0.08,
-                          decoration: const BoxDecoration(
-                              color: PracticeOneColors.brandSecondaryColor,
-                              borderRadius: BorderRadius.all(Radius.circular(12))),
+                          decoration: BoxDecoration(
+                              color: GastosColors.brandSecondaryColor, borderRadius: GastosThemes.borderRadius),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              // Image(
-                              //   image: AssetImage('assets/images/facebook.png'),
-                              //   width: 30,
-                              // ),
+                              const Image(
+                                image: AssetImage('assets/images/facebook_icon.png'),
+                                width: 30,
+                              ),
                               const SizedBox(width: 12),
                               Text(
                                 GastosTexts.facebook,
                                 style: const TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.bold,
-                                    color: PracticeOneColors.brandLigthDarkColor),
+                                    fontSize: 13, fontWeight: FontWeight.bold, color: GastosColors.brandLigthDarkColor),
                               )
                             ],
                           ),
@@ -247,10 +243,10 @@ class _LogInPageState extends State<LogInPage> {
                         TextButton(
                           child: Text(
                             GastosTexts.registerNow,
-                            style: const TextStyle(color: PracticeOneColors.brandPrimaryColor, fontSize: 13),
+                            style: const TextStyle(color: GastosColors.brandPrimaryColor, fontSize: 13),
                           ),
                           onPressed: () {
-                            // Navigator.pushNamed(context, AppRoutes.registerNowPage);
+                            Navigator.pushNamed(context, AppRoutes.registerNowPage);
                           },
                         )
                       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 import 'package:practice_1/widgets/money_display.dart';
 
@@ -21,9 +22,9 @@ class SummaryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var incomesIcon = const Icon(
       Icons.arrow_upward,
-      color: PracticeOneColors.brandOnSuccessColor,
+      color: GastosColors.brandOnSuccessColor,
     );
-    var spendingIcon = const Icon(Icons.arrow_downward, color: PracticeOneColors.brandOnErrorColor);
+    var spendingIcon = const Icon(Icons.arrow_downward, color: GastosColors.brandOnErrorColor);
 
     return Container(
       height: 92,
@@ -31,7 +32,7 @@ class SummaryCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
-        color: PracticeOneColors.brandLightColorOpacity,
+        color: GastosColors.brandLightColorOpacity,
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -41,8 +42,8 @@ class SummaryCard extends StatelessWidget {
             margin: const EdgeInsets.only(right: 8),
             decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(12)),
-                border: Border.all(color: PracticeOneColors.brandPrimaryColor)),
+                borderRadius: GastosThemes.borderRadius,
+                border: Border.all(color: GastosColors.brandPrimaryColor)),
             child: typeSummaryCard == TypeSummaryCard.incomes ? incomesIcon : spendingIcon),
         Expanded(
           child: Text(
@@ -62,8 +63,7 @@ class SummaryCard extends StatelessWidget {
               padding: const EdgeInsets.all(2.0),
               child: Text(
                 period,
-                style:
-                    const TextStyle(color: PracticeOneColors.brandLightColor, fontFamily: 'RobotoMono', fontSize: 10),
+                style: const TextStyle(color: GastosColors.brandLightColor, fontFamily: 'RobotoMono', fontSize: 10),
               ),
             ),
           ]),
@@ -72,8 +72,7 @@ class SummaryCard extends StatelessWidget {
           height: 40,
           width: 40,
           decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-              border: Border.all(color: PracticeOneColors.brandLightColorBorder)),
+              borderRadius: GastosThemes.borderRadius, border: Border.all(color: GastosColors.brandLightColorBorder)),
           child: IconButton(
             icon: const Icon(
               Icons.chevron_right,

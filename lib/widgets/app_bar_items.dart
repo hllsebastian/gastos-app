@@ -29,13 +29,13 @@ class AppBarItems extends StatelessWidget {
           ContainerIcon(
             margin: const EdgeInsets.only(right: 12),
             iconButton: IconButton(
-              icon: const Icon(Icons.notifications, color: PracticeOneColors.brandPrimaryColor),
+              icon: const Icon(Icons.notifications, color: GastosColors.brandPrimaryColor),
               onPressed: () => print('Press Icon'),
             ),
           ),
           ContainerIcon(
             iconButton: IconButton(
-              icon: const Icon(Icons.more_vert, color: PracticeOneColors.brandPrimaryColor),
+              icon: const Icon(Icons.more_vert, color: GastosColors.brandPrimaryColor),
               onPressed: () => print('Press Icon'),
             ),
           ),
@@ -62,7 +62,7 @@ class ContainerIcon extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         color: Colors.black12,
-        border: Border.all(color: PracticeOneColors.brandLightColorBorder),
+        border: Border.all(color: GastosColors.brandLightColorBorder),
         borderRadius: BorderRadius.circular(8),
         // TODO: to look how to do this
         // gradient: const LinearGradient(

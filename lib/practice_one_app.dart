@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/config/app_routes.dart';
-import 'package:practice_1/design/themes.dart';
+import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/models/user.dart';
 import 'package:practice_1/pages/home_page.dart';
 import 'package:practice_1/pages/login_page.dart';
@@ -15,7 +15,7 @@ class PracticeOneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: PracticeOneThemes.defaulTheme,
+      theme: GastosThemes.defaulTheme,
       // home: const HomePage(),
       // routes: {
       //   AppRoutes.detailsPage: (context) => const HomePage(),

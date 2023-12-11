@@ -21,7 +21,7 @@ class ButtonsRow extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.9,
       decoration: const BoxDecoration(
           shape: BoxShape.rectangle,
-          color: PracticeOneColors.brandLightColor,
+          color: GastosColors.brandLightColor,
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16), bottomRight: Radius.circular(16))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -33,7 +33,7 @@ class ButtonsRow extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 child: Text(
                   'Categories',
-                  style: TextStyle(color: PracticeOneColors.brandDarkColor, fontSize: 14),
+                  style: TextStyle(color: GastosColors.brandDarkColor, fontSize: 14),
                 ),
               )),
           ElevatedButton(
@@ -44,7 +44,7 @@ class ButtonsRow extends StatelessWidget {
                 // padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 child: Text(
                   'Recent transaction',
-                  style: TextStyle(color: PracticeOneColors.brandLigthDarkColor, fontSize: 14),
+                  style: TextStyle(color: GastosColors.brandLigthDarkColor, fontSize: 14),
                 ),
               )),
         ],

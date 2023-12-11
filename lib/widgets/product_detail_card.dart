@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/design/gastos_themes.dart';
 
 enum TypeProductDetailCard { incomes, outcomes }
 
@@ -39,7 +40,7 @@ class ProductDetailCard extends StatelessWidget {
             margin: const EdgeInsets.only(right: 8),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
+              borderRadius: GastosThemes.borderRadius,
               border: Border.all(color: Colors.black12),
             ),
             child: Image.asset(pathToProductImage),
@@ -72,7 +73,7 @@ class ProductDetailCard extends StatelessWidget {
             margin: const EdgeInsets.only(right: 8),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
+              borderRadius: GastosThemes.borderRadius,
               border: Border.all(color: Colors.black12),
             ),
             child: typeProductDetailCard == TypeProductDetailCard.incomes

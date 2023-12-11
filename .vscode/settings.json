@@ -1,7 +1,7 @@
 {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true,
+        "source.fixAll": "explicit"
     },
     "dart.previewFlutterUiGuides": true,
     "dart.previewFlutterUiGuidesCustomTracking": true,
@@ -19,7 +19,7 @@
         "editor.rulers": [
             120
         ],
-        "editor.wordBasedSuggestions": true,
+        "editor.wordBasedSuggestions": "matchingDocuments",
         "files.insertFinalNewline": true
     },
     "[yaml]": {
