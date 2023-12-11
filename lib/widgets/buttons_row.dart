@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 
 class ButtonsRow extends StatelessWidget {
@@ -16,8 +17,7 @@ class ButtonsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: const EdgeInsets.only(left: 16, right: 16),
-      height: 104,
+      height: 60,
       width: MediaQuery.of(context).size.width * 0.9,
       decoration: const BoxDecoration(
           shape: BoxShape.rectangle,
@@ -29,22 +29,21 @@ class ButtonsRow extends StatelessWidget {
           ElevatedButton(
               style: categorieBtnStyle,
               onPressed: categoriesBtnAction,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 child: Text(
-                  'Categories',
-                  style: TextStyle(color: GastosColors.brandDarkColor, fontSize: 14),
+                  GastosTexts.categories,
+                  style: const TextStyle(color: GastosColors.brandDarkColor, fontSize: 14),
                 ),
               )),
           ElevatedButton(
               style: recentTransactionsBtnStyle,
               onPressed: recentBtnAction,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
-                // padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
                 child: Text(
-                  'Recent transaction',
-                  style: TextStyle(color: GastosColors.brandLigthDarkColor, fontSize: 14),
+                  GastosTexts.recentTransaction,
+                  style: const TextStyle(color: GastosColors.brandLigthDarkColor, fontSize: 14),
                 ),
               )),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 import 'package:practice_1/widgets/app_bar_items.dart';
 import 'package:practice_1/widgets/buttons_row.dart';
@@ -116,8 +117,9 @@ class TopHomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(10),
       width: MediaQuery.of(context).size.width,
+      height: 360,
       transform: Matrix4.translationValues(0, -13, 0), // allow to move up the widget
       decoration: const BoxDecoration(
           color: GastosColors.brandPrimaryColor,
@@ -125,14 +127,14 @@ class TopHomePageBody extends StatelessWidget {
             bottomLeft: Radius.circular(16),
             bottomRight: Radius.circular(16),
           )),
-      height: 389,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Container(
-            margin: const EdgeInsets.only(top: 56),
-            child: Text(
-              'Your Budget',
-              style: Theme.of(context).textTheme.displaySmall,
-            )),
+        Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: Text(
+            GastosTexts.yourBudget,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+        ),
         MoneyDipslay(
           amount: 2868000.12,
           padding: const EdgeInsets.only(top: 8, right: 4),

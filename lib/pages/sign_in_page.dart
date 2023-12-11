@@ -1,18 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_1/config/app_routes.dart';
 import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 
-class RegisterNowPage extends StatefulWidget {
-  const RegisterNowPage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<RegisterNowPage> createState() => _RegisterNowPageState();
+  State<SignInPage> createState() => _RegisterNowPageState();
 }
 
-class _RegisterNowPageState extends State<RegisterNowPage> {
+class _RegisterNowPageState extends State<SignInPage> {
   final formRegisterNowKey = GlobalKey<FormState>();
   bool checkBoxState = false;
   TextEditingController userInputController = TextEditingController();
@@ -241,7 +240,8 @@ class _RegisterNowPageState extends State<RegisterNowPage> {
                 ),
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    Navigator.pushNamed(context, AppRoutes.loginPage);
+                    Navigator.of(context).pop();
+                    // Navigator.pushNamed(context, AppRoutes.loginPage);
                   },
               ),
             ]))

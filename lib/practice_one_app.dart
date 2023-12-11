@@ -6,7 +6,7 @@ import 'package:practice_1/pages/home_page.dart';
 import 'package:practice_1/pages/login_page.dart';
 import 'package:practice_1/pages/new_page.dart';
 import 'package:practice_1/pages/other_page.dart';
-import 'package:practice_1/pages/register_now_page.dart';
+import 'package:practice_1/pages/sign_in_page.dart';
 
 class PracticeOneApp extends StatelessWidget {
   const PracticeOneApp({super.key});
@@ -27,7 +27,7 @@ class PracticeOneApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case (AppRoutes.registerNowPage):
-            return MaterialPageRoute(builder: (context) => const RegisterNowPage());
+            return MaterialPageRoute(builder: (context) => const SignInPage());
           case (AppRoutes.homePage):
             return MaterialPageRoute(builder: (context) => HomePage(storeName: settings.arguments as String));
           case (AppRoutes.newpage):

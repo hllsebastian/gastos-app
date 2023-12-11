@@ -23,4 +23,7 @@ class GastosTexts {
   static String privacy = 'Privacy ';
   static String getStarted = 'Get Started ';
   static String alreadyHaveAccount = 'Already have an account? ';
+  static String yourBudget = 'Your Budget';
+  static String categories = 'Categories';
+  static String recentTransaction = 'Recent transaction';
 }
