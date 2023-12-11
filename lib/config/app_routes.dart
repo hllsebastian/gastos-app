@@ -7,4 +7,5 @@ class AppRoutes {
   static const String newpage = 'newpage';
   static const String otherPage = 'otherPage';
   static const String registerNowPage = 'registerNowPage';
+  static const String allTransactionsPage = 'allTransactionsPage';
 }

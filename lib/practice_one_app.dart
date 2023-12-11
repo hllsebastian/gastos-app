@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practice_1/config/app_routes.dart';
 import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/models/user.dart';
+import 'package:practice_1/pages/all_transactions.dart';
 import 'package:practice_1/pages/home_page.dart';
 import 'package:practice_1/pages/login_page.dart';
 import 'package:practice_1/pages/new_page.dart';
@@ -34,6 +35,8 @@ class PracticeOneApp extends StatelessWidget {
             return MaterialPageRoute(builder: (context) => const NewPage());
           case (AppRoutes.otherPage):
             return MaterialPageRoute(builder: (context) => OtherPage(userData: settings.arguments as User));
+          case (AppRoutes.allTransactionsPage):
+            return MaterialPageRoute(builder: (context) => const AllTransactions());
           default:
             return MaterialPageRoute(builder: (context) => const LogInPage());
         }

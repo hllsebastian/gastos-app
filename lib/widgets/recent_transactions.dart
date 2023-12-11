@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/config/app_routes.dart';
+import 'package:practice_1/design/gastos_texts.dart';
 
 enum RecentTransactionsType { incomes, outcomes }
 
@@ -23,12 +25,13 @@ class RecentTransactions extends StatelessWidget {
       child: ListView(children: [
         TextButton(
           style: const ButtonStyle(alignment: Alignment.centerRight),
-          child: const Text(
-            'View All',
-            style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(53, 97, 254, 1)),
+          child: Text(
+            GastosTexts.viewAll,
+            style: const TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(53, 97, 254, 1)),
           ),
           onPressed: () {
             print('le diste clic a view all');
+            Navigator.pushNamed(context, AppRoutes.allTransactionsPage);
           },
         ),
         RecentTransactionsCard(

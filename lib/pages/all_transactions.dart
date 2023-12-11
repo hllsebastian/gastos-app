@@ -60,6 +60,7 @@ class AllTransactions extends StatelessWidget {
                             fontSize: 13))),
               );
             },
+            itemCount: 5,
             // itemCount: TransactionsMocks.categories.length,
           ),
         ),
