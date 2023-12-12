@@ -105,7 +105,6 @@ class _RecentTransactionDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      // padding: const EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -116,7 +115,12 @@ class _RecentTransactionDetails extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: listOftransactions?[itemIndex].listofTransactions.length ?? 0,
-          separatorBuilder: (context, index) => const Divider(color: Colors.blue),
+          separatorBuilder: (context, index) => const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Divider(
+                  color: Colors.blue,
+                ),
+              ),
           itemBuilder: (context, detailIndex) {
             final transactionDetail = listOftransactions?[itemIndex].listofTransactions[detailIndex];
             final detailDate =
