@@ -34,13 +34,11 @@ class PracticeOneApp extends StatelessWidget {
             case (AppRoutes.registerNowPage):
               return MaterialPageRoute(builder: (context) => const SignInPage());
             case (AppRoutes.homePage):
-              return MaterialPageRoute(
-                  builder: (context) => const HomePage(/* storeName: settings.arguments as String */));
+              return MaterialPageRoute(builder: (context) => const HomePage());
             case (AppRoutes.newpage):
               return MaterialPageRoute(builder: (context) => const NewPage());
             case (AppRoutes.otherPage):
-              return MaterialPageRoute(
-                  builder: (context) => const OtherPage(/* userData: settings.arguments as User */));
+              return MaterialPageRoute(builder: (context) => const OtherPage());
             case (AppRoutes.allTransactionsPage):
               return MaterialPageRoute(
                   builder: (context) =>

@@ -27,4 +27,5 @@ class GastosTexts {
   static String categories = 'Categories';
   static String recentTrx = 'Recent transactions';
   static String viewAll = 'View All';
+  static String otherPage = 'Other Page';
 }

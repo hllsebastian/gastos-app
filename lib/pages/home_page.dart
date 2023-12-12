@@ -12,11 +12,7 @@ import 'package:practice_1/widgets/transactions_details.dart';
 import 'package:practice_1/widgets/summary_card.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({
-    super.key,
-    /* required this.storeName */
-  });
-  // final String storeName;
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
