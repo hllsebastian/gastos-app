@@ -52,10 +52,11 @@ class ContainerIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorList = [
-      Colors.blue.shade800,
-      Colors.blue.shade400,
-    ];
+    // TODO: to look how to apply on gradient
+    // final colorList = [
+    //   Colors.blue.shade800,
+    //   Colors.blue.shade400,
+    // ];
     return Container(
       width: 40,
       height: 40,

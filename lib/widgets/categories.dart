@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/config/app_routes.dart';
-import 'package:practice_1/pages/new_page.dart';
 import 'package:practice_1/widgets/product_detail_card.dart';
 
 class Categories extends StatelessWidget {

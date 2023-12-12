@@ -1,6 +1,5 @@
 import 'package:practice_1/models/transaction_detail.dart';
 import 'package:practice_1/models/transaction_detail_mounth.dart';
-import 'package:practice_1/widgets/transactions_details.dart';
 
 class TransactionsMocks {
   const TransactionsMocks._();
@@ -118,6 +117,18 @@ class TransactionsMocks {
           movementName: 'buy',
           transactionDate: 'monday ',
           transactionType: TransactionType.negative,
+          amount: 456,
+        ),
+        TransactionDetail(
+          movementName: 'buy',
+          transactionDate: 'monday ',
+          transactionType: TransactionType.negative,
+          amount: 456,
+        ),
+        TransactionDetail(
+          movementName: 'buy',
+          transactionDate: 'monday ',
+          transactionType: TransactionType.positive,
           amount: 456,
         ),
       ],
