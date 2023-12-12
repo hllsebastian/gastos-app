@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_1/data/user_provider.dart';
 import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 import 'package:practice_1/mocks/transactions_mocks.dart';
@@ -11,8 +12,11 @@ import 'package:practice_1/widgets/transactions_details.dart';
 import 'package:practice_1/widgets/summary_card.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.storeName});
-  final String storeName;
+  const HomePage({
+    super.key,
+    /* required this.storeName */
+  });
+  // final String storeName;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -48,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         backgroundColor: GastosColors.brandLightColor,
-        title: AppBarItems(storeName: widget.storeName),
+        title: AppBarItems(storeName: UserProvider.of(context).userData.name),
       ),
       body: Column(
         children: [

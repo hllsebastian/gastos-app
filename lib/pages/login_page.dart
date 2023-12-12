@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/config/app_routes.dart';
+import 'package:practice_1/data/user_provider.dart';
 import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
@@ -157,7 +158,8 @@ class _LogInPageState extends State<LogInPage> {
                             print('Todos lo campos estan ok 🤯');
                             // _formLoginKey.currentState!.save();
                             storeName = userInputController.text;
-                            Navigator.of(context).pushReplacementNamed(AppRoutes.homePage, arguments: storeName);
+                            UserProvider.of(context).userData.name = storeName;
+                            Navigator.of(context).pushReplacementNamed(AppRoutes.homePage /* , arguments: storeName */);
                           }
                         },
                         style: ElevatedButton.styleFrom(
