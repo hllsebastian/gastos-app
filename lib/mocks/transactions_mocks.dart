@@ -1,6 +1,6 @@
 import 'package:practice_1/models/transaction_detail.dart';
 import 'package:practice_1/models/transaction_detail_mounth.dart';
-import 'package:practice_1/widgets/recent_transactions.dart';
+import 'package:practice_1/widgets/transactions_details.dart';
 
 class TransactionsMocks {
   const TransactionsMocks._();
@@ -57,7 +57,7 @@ class TransactionsMocks {
         TransactionDetail(
           movementName: 'buy',
           transactionDate: 'monday ',
-          transactionType: TransactionType.positive,
+          transactionType: TransactionType.negative,
           amount: 456,
         ),
         TransactionDetail(
@@ -75,7 +75,21 @@ class TransactionsMocks {
         TransactionDetail(
           movementName: 'buy',
           transactionDate: 'monday ',
-          transactionType: TransactionType.positive,
+          transactionType: TransactionType.negative,
+          amount: 456,
+        ),
+      ],
+    ),
+    const TransactionDetailByMounth(
+      day: 'Monday',
+      mounth: 'November',
+      dayNumber: 2,
+      isToday: false,
+      listofTransactions: [
+        TransactionDetail(
+          movementName: 'buy',
+          transactionDate: 'monday ',
+          transactionType: TransactionType.negative,
           amount: 456,
         ),
       ],
@@ -103,21 +117,7 @@ class TransactionsMocks {
         TransactionDetail(
           movementName: 'buy',
           transactionDate: 'monday ',
-          transactionType: TransactionType.positive,
-          amount: 456,
-        ),
-      ],
-    ),
-    const TransactionDetailByMounth(
-      day: 'Monday',
-      mounth: 'November',
-      dayNumber: 2,
-      isToday: false,
-      listofTransactions: [
-        TransactionDetail(
-          movementName: 'buy',
-          transactionDate: 'monday ',
-          transactionType: TransactionType.positive,
+          transactionType: TransactionType.negative,
           amount: 456,
         ),
       ],

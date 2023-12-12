@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/config/app_routes.dart';
 import 'package:practice_1/design/gastos_themes.dart';
+import 'package:practice_1/models/transaction_detail_mounth.dart';
 import 'package:practice_1/models/user.dart';
 import 'package:practice_1/pages/all_transactions.dart';
 import 'package:practice_1/pages/home_page.dart';
@@ -36,13 +37,15 @@ class PracticeOneApp extends StatelessWidget {
           case (AppRoutes.otherPage):
             return MaterialPageRoute(builder: (context) => OtherPage(userData: settings.arguments as User));
           case (AppRoutes.allTransactionsPage):
-            return MaterialPageRoute(builder: (context) => const AllTransactions());
-          default:
             return MaterialPageRoute(
-                builder: (context) => const HomePage(
-                      storeName: 'Don Saitama',
-                    ));
-          // return MaterialPageRoute(builder: (context) => const LogInPage());
+                builder: (context) =>
+                    AllTransactions(listOftransactions: settings.arguments as List<TransactionDetailByMounth>?));
+          default:
+            // return MaterialPageRoute(
+            //     builder: (context) => const HomePage(
+            //           storeName: 'Don Saitama',
+            //         ));
+            return MaterialPageRoute(builder: (context) => const LogInPage());
         }
       },
     );

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
 import 'package:practice_1/mocks/transactions_mocks.dart';
-import 'package:practice_1/models/transaction_detail.dart';
-import 'package:practice_1/models/transaction_detail_mounth.dart';
+
 import 'package:practice_1/widgets/app_bar_items.dart';
 import 'package:practice_1/widgets/buttons_row.dart';
 import 'package:practice_1/widgets/categories.dart';
 import 'package:practice_1/widgets/money_display.dart';
-import 'package:practice_1/widgets/recent_transactions.dart';
+import 'package:practice_1/widgets/transactions_details.dart';
 import 'package:practice_1/widgets/summary_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -66,10 +65,7 @@ class _HomePageState extends State<HomePage> {
             },
             recentBtnAction: () {
               setState(() {
-                currentDetailWidget = RecentTransactions(
-                  // movementDate: DateTime.now(),
-                  // amount: 350.9,
-                  // movementName: 'Pizza',
+                currentDetailWidget = TransactionsDetails(
                   listOftransactions: TransactionsMocks.recentTransactions,
                 );
                 categorieBtnStyle = buttonStyleInactive;
@@ -77,12 +73,6 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          // RecentTransactions(
-          //   movementDate: DateTime.now(),
-          //   amount: 350.9,
-          //   movementName: 'Pizza',
-          //   transactionType: RecentTransactionsType.incomes,
-          // )
           currentDetailWidget,
         ],
       ),

@@ -42,7 +42,7 @@ class ButtonsRow extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
                 child: Text(
-                  GastosTexts.recentTransaction,
+                  GastosTexts.recentTrx,
                   style: const TextStyle(color: GastosColors.brandLigthDarkColor, fontSize: 14),
                 ),
               )),

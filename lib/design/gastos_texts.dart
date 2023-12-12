@@ -25,6 +25,6 @@ class GastosTexts {
   static String alreadyHaveAccount = 'Already have an account? ';
   static String yourBudget = 'Your Budget';
   static String categories = 'Categories';
-  static String recentTransaction = 'Recent transaction';
+  static String recentTrx = 'Recent transactions';
   static String viewAll = 'View All';
 }
