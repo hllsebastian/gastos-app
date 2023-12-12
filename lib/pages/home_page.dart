@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
+import 'package:practice_1/mocks/transactions_mocks.dart';
+import 'package:practice_1/models/transaction_detail.dart';
+import 'package:practice_1/models/transaction_detail_mounth.dart';
 import 'package:practice_1/widgets/app_bar_items.dart';
 import 'package:practice_1/widgets/buttons_row.dart';
 import 'package:practice_1/widgets/categories.dart';
@@ -64,10 +67,10 @@ class _HomePageState extends State<HomePage> {
             recentBtnAction: () {
               setState(() {
                 currentDetailWidget = RecentTransactions(
-                  movementDate: DateTime.now(),
-                  amount: 350.9,
-                  movementName: 'Pizza',
-                  transactionType: RecentTransactionsType.incomes,
+                  // movementDate: DateTime.now(),
+                  // amount: 350.9,
+                  // movementName: 'Pizza',
+                  listOftransactions: TransactionsMocks.recentTransactions,
                 );
                 categorieBtnStyle = buttonStyleInactive;
                 recentTransactionsBtnStyle = buttonStyleActive;

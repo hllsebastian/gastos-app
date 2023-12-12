@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
+import 'package:practice_1/mocks/transactions_mocks.dart';
 
 class AllTransactions extends StatelessWidget {
   const AllTransactions({super.key});
@@ -43,25 +44,24 @@ class AllTransactions extends StatelessWidget {
           child: ListView.builder(
             padding: const EdgeInsets.all(10),
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, indice) {
-              // var currentCategorie = TransactionsMocks.categories[indice];
+            itemCount: TransactionsMocks.categories.length,
+            itemBuilder: (context, index) {
+              var currentCategorie = TransactionsMocks.categories[index];
               return Padding(
                 padding: const EdgeInsets.only(right: 12),
                 child: MaterialButton(
                     padding: const EdgeInsets.all(10),
                     height: 35,
                     minWidth: 35,
-                    color: indice == 0 ? GastosColors.brandPrimaryColor : GastosColors.brandLightColor,
+                    color: index == 0 ? GastosColors.brandPrimaryColor : GastosColors.brandLightColor,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     onPressed: () {},
-                    child: Text('currentCategorie',
+                    child: Text(currentCategorie,
                         style: TextStyle(
-                            color: indice != 0 ? GastosColors.brandPrimaryColor : GastosColors.brandLightColor,
+                            color: index != 0 ? GastosColors.brandPrimaryColor : GastosColors.brandLightColor,
                             fontSize: 13))),
               );
             },
-            itemCount: 5,
-            // itemCount: TransactionsMocks.categories.length,
           ),
         ),
         Expanded(
@@ -71,6 +71,7 @@ class AllTransactions extends StatelessWidget {
               return ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
+                itemCount: 3,
                 itemBuilder: (context, day) {
                   print('vamos en el dia $day');
                   // var currentday = TransactionsMocks
@@ -87,8 +88,8 @@ class AllTransactions extends StatelessWidget {
                 },
                 separatorBuilder: (context, indice) => const SizedBox(
                   height: 24,
+                  child: Divider(),
                 ),
-                itemCount: 3,
                 // itemCount: TransactionsMocks
                 //     .transactionDetailByMonth[month]
                 //     .listofTransactions.length
