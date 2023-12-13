@@ -16,6 +16,7 @@ class _LogInPageState extends State<LogInPage> {
   final _formLoginKey = GlobalKey<FormState>();
   bool checkBoxState = false;
   TextEditingController userInputController = TextEditingController();
+  double titleSize = 50;
   late String storeName;
   late BoxDecoration userContainerDecoration;
   late BoxDecoration pswContainerDecoration;
@@ -45,15 +46,24 @@ class _LogInPageState extends State<LogInPage> {
         child: Center(
           child: Column(
             children: [
-              Text(
-                GastosTexts.welcome,
-                style: Theme.of(context).textTheme.headlineLarge,
+              TweenAnimationBuilder(
+                tween: Tween<double>(begin: 13, end: titleSize),
+                duration: const Duration(seconds: 2),
+                onEnd: () {
+                  setState(() => titleSize == 50 ? 13 : 50);
+                },
+                builder: (context, sizeText, _) {
+                  return Text(
+                    GastosTexts.welcome,
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(fontSize: sizeText),
+                  );
+                },
               ),
               Container(
-                margin: const EdgeInsets.fromLTRB(16, 21, 16, 59),
+                margin: const EdgeInsets.fromLTRB(16, 10, 16, 39),
                 child: Text(
                   GastosTexts.pleaseAuth,
-                  style: Theme.of(context).textTheme.labelMedium,
+                  style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
               ),
