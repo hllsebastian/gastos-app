@@ -4,6 +4,7 @@ import 'package:practice_1/data/user_provider.dart';
 import 'package:practice_1/design/gastos_texts.dart';
 import 'package:practice_1/design/gastos_themes.dart';
 import 'package:practice_1/design/practice_one_colors.dart';
+import 'package:practice_1/pages/helpers/validate_input.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -47,10 +48,13 @@ class _LogInPageState extends State<LogInPage> {
           child: Column(
             children: [
               TweenAnimationBuilder(
-                tween: Tween<double>(begin: 13, end: titleSize),
-                duration: const Duration(seconds: 2),
+                tween: Tween<double>(begin: 30, end: titleSize),
+                curve: Curves.elasticIn,
+                duration: const Duration(seconds: 4),
                 onEnd: () {
-                  setState(() => titleSize == 50 ? 13 : 50);
+                  setState(() {
+                    titleSize = titleSize == 50 ? 13 : 50;
+                  });
                 },
                 builder: (context, sizeText, _) {
                   return Text(
@@ -78,15 +82,7 @@ class _LogInPageState extends State<LogInPage> {
                       child: TextFormField(
                           controller: userInputController,
                           style: Theme.of(context).textTheme.labelSmall,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return GastosTexts.emptyFieldError;
-                            }
-                            if (value.length >= 10) {
-                              return GastosTexts.lengthFieldError;
-                            }
-                            return null;
-                          },
+                          validator: (value) => validateInput(value),
                           onTap: () {
                             setState(() {
                               userContainerDecoration = activeContainerInputDecoration;
@@ -111,12 +107,7 @@ class _LogInPageState extends State<LogInPage> {
                       margin: const EdgeInsets.symmetric(vertical: 24),
                       decoration: pswContainerDecoration,
                       child: TextFormField(
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return GastosTexts.emptyFieldError;
-                            }
-                            return null;
-                          },
+                          validator: (value) => validateInput(value, true),
                           onTap: () {
                             setState(() {
                               pswContainerDecoration = activeContainerInputDecoration;
