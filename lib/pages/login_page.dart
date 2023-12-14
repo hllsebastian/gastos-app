@@ -80,6 +80,7 @@ class _LogInPageState extends State<LogInPage> {
                       padding: const EdgeInsets.only(left: 24, bottom: 4),
                       decoration: userContainerDecoration,
                       child: TextFormField(
+                          key: const Key('input-name'),
                           controller: userInputController,
                           style: Theme.of(context).textTheme.labelSmall,
                           validator: (value) => validateInput(value),
@@ -107,6 +108,7 @@ class _LogInPageState extends State<LogInPage> {
                       margin: const EdgeInsets.symmetric(vertical: 24),
                       decoration: pswContainerDecoration,
                       child: TextFormField(
+                          key: const Key('input-psw'),
                           validator: (value) => validateInput(value, true),
                           onTap: () {
                             setState(() {

@@ -8,7 +8,6 @@ void main() {
     test('invalid user', () {
       // Arrenge -> To prepare for run test
       const inputValue = 'moreOfElevenCharacthers';
-      // const inputValue = 'more';
       final expectedError = GastosTexts.lengthFieldError;
 
       // Act -> To run the action to test
@@ -20,7 +19,6 @@ void main() {
     test('invalid user null', () {
       // Arrenge -> To prepare for run test
       String? inputValue;
-      // const inputValue = 'more';
       final expectedError = GastosTexts.emptyFieldError;
 
       // Act -> To run the action to test
